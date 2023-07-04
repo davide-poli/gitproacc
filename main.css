@@ -1,0 +1,13 @@
+body {
+	display: grid;
+	place-items: center;
+}
+.showcase-container {
+	border-radius: 4px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.096);
+	width: 80%;
+	padding: 40px;
+	height: 1000px;
+	border: 0.5px solid rgb(194, 194, 194);
+	margin: 5rem 0;
+}

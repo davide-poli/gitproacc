@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href=".\node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href=".\node_modules\bs-stepper\dist\css\bs-stepper.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="showcase-container">
+        <h3 style='margin-left: 20px;'>PROPOSTA D'ACCESSO</h3>
+        <h5 style='margin-left: 20px;'>Prestazioni socio-assistenziali domiciliari, semi e residenziali</h5>
+        <div class="bs-stepper" id='proacc-stepper'>
+            <div class="bs-stepper-header" role="tablist">
+                <!-- your steps here -->
+                <div class="step" data-target="#dati-generali">
+                    <button type="button" class="step-trigger" role="tab" aria-controls="dati-generali"
+                        id="dati-generali-trigger">
+                        <span class="bs-stepper-circle">1</span>
+                        <span class="bs-stepper-label">Dati generali</span>
+                    </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#assistito">
+                    <button type="button" class="step-trigger" role="tab" aria-controls="assistito"
+                        id="assistito-trigger">
+                        <span class="bs-stepper-circle">2</span>
+                        <span class="bs-stepper-label">Assistito</span>
+                    </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#richiesta">
+                    <button type="button" class="step-trigger" role="tab" aria-controls="richiesta"
+                        id="richiesta-trigger">
+                        <span class="bs-stepper-circle">3</span>
+                        <span class="bs-stepper-label">Richiesta</span>
+                    </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#proposta">
+                    <button type="button" class="step-trigger" role="tab" aria-controls="proposta"
+                        id="proposta-trigger">
+                        <span class="bs-stepper-circle">4</span>
+                        <span class="bs-stepper-label">Proposta</span>
+                    </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#allegati">
+                    <button type="button" class="step-trigger" role="tab" aria-controls="allegati"
+                        id="allegati-trigger">
+                        <span class="bs-stepper-circle">5</span>
+                        <span class="bs-stepper-label">Allegati</span>
+                    </button>
+                </div>
+
+            </div>
+            <div class="bs-stepper-content">
+                <!-- your steps content here -->
+                <div id="dati-generali" class="content" role="tabpanel" aria-labelledby="dati-generali-trigger">
+                    <div class="container-fluid p0 mt-5">
+
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label for="asl">ASL</label>
+                                <select class="form-control" id="asl">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="distretto-sanitario">Distretto sanitario</label>
+                                <select class="form-control" id="distretto-sanitario">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label for="municipalita">Municipalità</label>
+                                <select class="form-control" id="municipalita">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="circoscrizione">Circoscrizione</label>
+                                <select class="form-control" id="circoscrizione">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label for="puat">Punto di accesso</label>
+                                <select class="form-control" id="puat">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="data-proposta">Data della proposta</label>
+                                <input class="form-control" type='date'>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <h6><b>Medico curante</b></h6>
+
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label for="medico-curante-nominativo">Nominativo</label>
+                                <input type="text" class="form-control" id="medico-curante-nominativo"
+                                    aria-describedby="medico-curante-nominativo">
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="medico-curante-contatti">Contatti <i>(tel. / e-mail)</i></label>
+                                <input type="text" class="form-control" id="medico-curante-contatti"
+                                    aria-describedby="medico-curante-contatti">
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label for="csst">C.S.S.T.</label>
+                                <select class="form-control" id="csst">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="assistente-sociale">Assistente sociale</label>
+                                <input type="text" class="form-control" id="assistente-sociale"
+                                    aria-describedby="assistente-sociale">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="btn-toolbar justify-content-end ">
+                        <button class="btn btn-primary next">Successivo</button>
+                    </div>
+
+
+                </div>
+
+
+                <div id="assistito" class="content" role="tabpanel" aria-labelledby="assistito-trigger">
+
+                    <fieldset class='border p-2 rounded-sm'>
+                        <legend class='w-auto p-4 h6'><b>Dati anagrafici</b></legend>
+                        <div class="container">
+                            <div class="row">
+                                <p class='col-sm-6'>Nome: <b>Gianni</b></p>
+                                <p class='col-sm-6'>Cognome: <b>Rossi</b></p>
+                            </div>
+                            <div class="row">
+                                <p class='col-sm-6'>Luogo di nascita: <b>Roma (RM)</b></p>
+                                <p class='col-sm-6'>Data di nascita: <b>18 - 11 - 1991</b></p>
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                    <div class="btn-toolbar justify-content-between">
+                        <button class="btn btn-primary prev">Precedente</button>
+                        <button class="btn btn-primary next">Successivo</button>
+                    </div>
+                </div>
+
+
+                <div id="richiesta" class="content" role="tabpanel" aria-labelledby="richiesta-trigger">
+                    <h1>C</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo magnam iste ipsam dolorem
+                        sunt dignissimos nihil laudantium voluptates exercitationem quasi voluptate dolor perspiciatis,
+                        cumque reiciendis perferendis eveniet sequi voluptatum?
+                        Architecto ratione accusamus officiis, aliquid qui eum omnis beatae et atque quaerat dolores
+                        consequatur, aliquam, debitis unde magni odio? Velit eligendi exercitationem, magni maiores
+                        excepturi impedit sit quaerat officiis non.</p>
+                    <div class="btn-toolbar justify-content-between">
+                        <button class="btn btn-primary prev">Precedente</button>
+                        <button class="btn btn-primary next">Successivo</button>
+                    </div>
+                </div>
+
+
+
+                <div id="proposta" class="content" role="tabpanel" aria-labelledby="proposta-trigger">
+                    <h1>D</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo magnam iste ipsam dolorem
+                        sunt dignissimos nihil laudantium voluptates exercitationem quasi voluptate dolor perspiciatis,
+                        cumque reiciendis perferendis eveniet sequi voluptatum?
+                        Architecto ratione accusamus officiis, aliquid qui eum omnis beatae et atque quaerat dolores
+                        consequatur, aliquam, debitis unde magni odio? Velit eligendi exercitationem, magni maiores
+                        excepturi impedit sit quaerat officiis non.</p>
+                    <div class="btn-toolbar justify-content-between">
+                        <button class="btn btn-primary prev">Precedente</button>
+                        <button class="btn btn-primary next">Successivo</button>
+                    </div>
+                </div>
+
+
+                <div id="allegati" class="content" role="tabpanel" aria-labelledby="allegati-trigger">
+                    <h1>E</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo magnam iste ipsam dolorem
+                        sunt dignissimos nihil laudantium voluptates exercitationem quasi voluptate dolor perspiciatis,
+                        cumque reiciendis perferendis eveniet sequi voluptatum?
+                        Architecto ratione accusamus officiis, aliquid qui eum omnis beatae et atque quaerat dolores
+                        consequatur, aliquam, debitis unde magni odio? Velit eligendi exercitationem, magni maiores
+                        excepturi impedit sit quaerat officiis non.</p>
+                    <div class="btn-toolbar justify-content-between">
+                        <button class="btn btn-primary prev">Precedente</button>
+                        <button class="btn btn-primary next">Invia proposta</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="node_modules\jquery\dist\jquery.min.js"></script>
+    <script src=".\node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
+    <script src=".\node_modules\bs-stepper\dist\js\bs-stepper.min.js"></script>
+    <script src=".\app.js"></script>
+</body>
+
+</html>
