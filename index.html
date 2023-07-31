@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href=".\node_modules\bootstrap\dist\css\bootstrap.min.css">
     <link rel="stylesheet" href=".\node_modules\bs-stepper\dist\css\bs-stepper.css">
+    <link rel="stylesheet" href=".\plugin\multi-select-tag-main\dist\css\multi-select-tag.css">
+
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -14,7 +16,7 @@
     <div class="showcase-container">
         <h3 style='margin-left: 20px;'>PROPOSTA D'ACCESSO</h3>
         <h5 style='margin-left: 20px;'>Prestazioni socio-assistenziali domiciliari, semi e residenziali</h5>
-        <div class="bs-stepper" id='proacc-stepper'>
+        <div class="bs-stepper" id='residenziali-semi-stepper'>
             <div class="bs-stepper-header" role="tablist">
                 <!-- your steps here -->
                 <div class="step" data-target="#dati-generali">
@@ -25,228 +27,295 @@
                     </button>
                 </div>
                 <div class="line"></div>
-                <div class="step" data-target="#assistito">
-                    <button type="button" class="step-trigger" role="tab" aria-controls="assistito"
-                        id="assistito-trigger">
+                <div class="step" data-target="#assistenza">
+                    <button type="button" class="step-trigger" role="tab" aria-controls="assistenza"
+                        id="assistenza-trigger">
                         <span class="bs-stepper-circle">2</span>
-                        <span class="bs-stepper-label">Assistito</span>
+                        <span class="bs-stepper-label">Assistenza</span>
                     </button>
                 </div>
                 <div class="line"></div>
-                <div class="step" data-target="#richiesta">
-                    <button type="button" class="step-trigger" role="tab" aria-controls="richiesta"
-                        id="richiesta-trigger">
+                <div class="step" data-target="#segnalazioni">
+                    <button type="button" class="step-trigger" role="tab" aria-controls="segnalazioni"
+                        id="segnalazioni-trigger">
                         <span class="bs-stepper-circle">3</span>
-                        <span class="bs-stepper-label">Richiesta</span>
+                        <span class="bs-stepper-label">Segnalazioni</span>
                     </button>
                 </div>
-                <div class="line"></div>
-                <div class="step" data-target="#proposta">
-                    <button type="button" class="step-trigger" role="tab" aria-controls="proposta"
-                        id="proposta-trigger">
-                        <span class="bs-stepper-circle">4</span>
-                        <span class="bs-stepper-label">Proposta</span>
-                    </button>
-                </div>
-                <div class="line"></div>
-                <div class="step" data-target="#allegati">
-                    <button type="button" class="step-trigger" role="tab" aria-controls="allegati"
-                        id="allegati-trigger">
-                        <span class="bs-stepper-circle">5</span>
-                        <span class="bs-stepper-label">Allegati</span>
-                    </button>
-                </div>
+
 
             </div>
             <div class="bs-stepper-content">
-                <!-- your steps content here -->
-                <div id="dati-generali" class="content" role="tabpanel" aria-labelledby="dati-generali-trigger">
-                    <div class="container-fluid p0 mt-5">
+                <form id="residenziali-semi">
+                    <!-- your steps content here -->
+                    <div id="dati-generali" class="content" role="tabpanel" aria-labelledby="dati-generali-trigger">
+                        <div class="container-fluid p-0 mt-5">
 
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <label for="asl">ASL</label>
-                                <select class="form-control" id="asl">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label for="distretto-sanitario">Distretto sanitario</label>
-                                <select class="form-control" id="distretto-sanitario">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <label for="municipalita">Municipalità</label>
-                                <select class="form-control" id="municipalita">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label for="circoscrizione">Circoscrizione</label>
-                                <select class="form-control" id="circoscrizione">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <label for="puat">Punto di accesso</label>
-                                <select class="form-control" id="puat">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label for="data-proposta">Data della proposta</label>
-                                <input class="form-control" type='date'>
-                            </div>
-                        </div>
-
-                        <hr>
-                        <h6><b>Medico curante</b></h6>
-
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <label for="medico-curante-nominativo">Nominativo</label>
-                                <input type="text" class="form-control" id="medico-curante-nominativo"
-                                    aria-describedby="medico-curante-nominativo">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label for="medico-curante-contatti">Contatti <i>(tel. / e-mail)</i></label>
-                                <input type="text" class="form-control" id="medico-curante-contatti"
-                                    aria-describedby="medico-curante-contatti">
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <label for="csst">C.S.S.T.</label>
-                                <select class="form-control" id="csst">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label for="assistente-sociale">Assistente sociale</label>
-                                <input type="text" class="form-control" id="assistente-sociale"
-                                    aria-describedby="assistente-sociale">
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="btn-toolbar justify-content-end ">
-                        <button class="btn btn-primary next">Successivo</button>
-                    </div>
-
-
-                </div>
-
-
-                <div id="assistito" class="content" role="tabpanel" aria-labelledby="assistito-trigger">
-
-                    <fieldset class='border p-2 rounded-sm'>
-                        <legend class='w-auto p-4 h6'><b>Dati anagrafici</b></legend>
-                        <div class="container">
                             <div class="row">
-                                <p class='col-sm-6'>Nome: <b>Gianni</b></p>
-                                <p class='col-sm-6'>Cognome: <b>Rossi</b></p>
+                                <div class="form-group col-sm-6">
+                                    <label for="distretto">Distretto sanitario</label>
+                                    <input type="text" class="form-control" id="distretto" name="distretto"
+                                        value="SOSTITUIRE CON DATI DA MODEL" disabled>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="municipalita">Municipalità</label>
+                                    <input type="text" class="form-control" id="municipalita" name="municipalita"
+                                        value="SOSTITUIRE CON DATI DA MODEL" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="utente">Utente</label>
+                                    <input type="text" class="form-control" id="utente" name="utente"
+                                        value="SOSTITUIRE CON DATI DA MODEL" disabled>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="municipalita">Data di nascita</label>
+                                    <input type="text" class="form-control" id="municipalita" name="municipalita"
+                                        value="SOSTITUIRE CON DATI DA MODEL" disabled>
+                                </div>
+                            </div>
+
+
+                            <hr>
+                            <h6><b>Utente</b> - Obiettivi e risultati attesi</h6>
+
+                            <div class="row d-flex align-items-center">
+                                <div class="col-1">
+                                    <p style='text-align:center; margin: 0;'><strong>1.</strong></p>
+                                </div>
+                                <div class="form-group col-11">
+                                    <input type="text" class="form-control" id="ObiettiviUtente1"
+                                        name="ObiettiviUtente1" aria-describedby="ObiettiviUtente1">
+                                </div>
+                            </div>
+                            <div class="row d-flex align-items-center">
+                                <div class="col-1">
+                                    <p style='text-align:center; margin: 0;'><strong>2.</strong></p>
+                                </div>
+                                <div class="form-group col-11">
+                                    <input type="text" class="form-control" id="ObiettiviUtente2"
+                                        name="ObiettiviUtente2" aria-describedby="ObiettiviUtente2">
+                                </div>
+                            </div>
+                            <div class="row d-flex align-items-center">
+                                <div class="col-1">
+                                    <p style='text-align:center; margin: 0;'><strong>3.</strong></p>
+                                </div>
+                                <div class="form-group col-11">
+                                    <input type="text" class="form-control" id="ObiettiviUtente3"
+                                        name="ObiettiviUtente3" aria-describedby="ObiettiviUtente3">
+                                </div>
+                            </div>
+                            <h6><b>Familiari</b> - Obiettivi e risultati attesi</h6>
+
+                            <div class="row d-flex align-items-center">
+                                <div class="col-1">
+                                    <p style='text-align:center; margin: 0;'><strong>1.</strong></p>
+                                </div>
+                                <div class="form-group col-11">
+                                    <input type="text" class="form-control" id="ObiettiviFamiglia1"
+                                        name="ObiettiviFamiglia1" aria-describedby="ObiettiviFamiglia1">
+                                </div>
+                            </div>
+                            <div class="row d-flex align-items-center">
+                                <div class="col-1">
+                                    <p style='text-align:center; margin: 0;'><strong>2.</strong></p>
+                                </div>
+                                <div class="form-group col-11">
+                                    <input type="text" class="form-control" id="ObiettiviFamiglia2"
+                                        name="ObiettiviFamiglia2" aria-describedby="ObiettiviFamiglia2">
+                                </div>
+                            </div>
+                            <div class="row d-flex align-items-center">
+                                <div class="col-1">
+                                    <p style='text-align:center; margin: 0;'><strong>3.</strong></p>
+                                </div>
+                                <div class="form-group col-11">
+                                    <input type="text" class="form-control" id="ObiettiviFamiglia3"
+                                        name="ObiettiviFamiglia3" aria-describedby="ObiettiviFamiglia3">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="btn-toolbar justify-content-end ">
+                            <button class="btn btn-primary next">Successivo</button>
+                        </div>
+
+
+                    </div>
+
+
+                    <div id="assistenza" class="content" role="tabpanel" aria-labelledby="assistenza-trigger">
+                        <div class="container-fluid p-0 mt-5">
+                            <div class="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="TipologiaAssistenzaId"
+                                        id="TipologiaAssistenzaId-1" value="1" checked>
+                                    <label class="form-check-label" for="TipologiaAssistenzaId-1">
+                                        Assistenza semiresidenziale per disabili gravi (modulo a medio o alto carico
+                                        assistenziale)
+                                    </label>
+                                </div>
                             </div>
                             <div class="row">
-                                <p class='col-sm-6'>Luogo di nascita: <b>Roma (RM)</b></p>
-                                <p class='col-sm-6'>Data di nascita: <b>18 - 11 - 1991</b></p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="TipologiaAssistenzaId"
+                                        id="TipologiaAssistenzaId-2" value="2" checked>
+                                    <label class="form-check-label" for="TipologiaAssistenzaId-2">
+                                        Assistenza semiresidenziale per anziani non autosufficienti
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row p-4 col-12" style='border: 1px solid #e7e7e7; border-radius: 4px;'>
+                                <div class="form-check form-check-inline col-sm-6">
+                                    <input class="form-check-input" type="radio" name="TipologiaModulo"
+                                        id="TipologiaModulo-1" value="medio-alto-carico">
+                                    <label class="form-check-label" for="TipologiaModulo-1">Modulo per anziani a medio e
+                                        alto carico</label>
+                                </div>
+                                <div class="form-check form-check-inline col-sm-5">
+                                    <input class="form-check-input" type="radio" name="TipologiaModulo"
+                                        id="TipologiaModulo-2" value="demenze">
+                                    <label class="form-check-label" for="TipologiaModulo-2">Modulo per demenze</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="TipologiaAssistenzaId"
+                                        id="TipologiaAssistenzaId-3" value="3" checked>
+                                    <label class="form-check-label" for="TipologiaAssistenzaId-3">
+                                        Assistenza residenziale per disabili gravi
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row p-4 col-12" style='border: 1px solid #e7e7e7; border-radius: 4px;'>
+                                <div class="form-check form-check-inline col-sm-6">
+                                    <input class="form-check-input" type="radio" name="TipologiaModulo"
+                                        id="TipologiaModulo-3" value="medio-carico">
+                                    <label class="form-check-label" for="TipologiaModulo-3">Modulo a medio carico
+                                        assistenziale</label>
+                                </div>
+                                <div class="form-check form-check-inline col-sm-5">
+                                    <input class="form-check-input" type="radio" name="TipologiaModulo"
+                                        id="TipologiaModulo-4" value="alto-carico">
+                                    <label class="form-check-label" for="TipologiaModulo-4">Modulo ad alto carico
+                                        assistenziale</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="TipologiaAssistenzaId"
+                                        id="TipologiaAssistenzaId-4" value="4" checked>
+                                    <label class="form-check-label" for="TipologiaAssistenzaId-4">
+                                        Assistenza residenziale per disabili privi di sostegno familiare (modulo a medio
+                                        carico)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="TipologiaAssistenzaId"
+                                        id="TipologiaAssistenzaId-5" value="5" checked>
+                                    <label class="form-check-label" for="TipologiaAssistenzaId-5">
+                                        Assistenza residenziale per anziani non autosufficienti
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row p-4 col-12" style='border: 1px solid #e7e7e7; border-radius: 4px;'>
+                                <div class="form-check form-check-inline col-sm-4">
+                                    <input class="form-check-input" type="radio" name="TipologiaModulo"
+                                        id="TipologiaModulo-5" value="medio-carico">
+                                    <label class="form-check-label" for="TipologiaModulo-5">Modulo a medio carico
+                                        assistenziale</label>
+                                </div>
+                                <div class="form-check form-check-inline col-sm-4">
+                                    <input class="form-check-input" type="radio" name="TipologiaModulo"
+                                        id="TipologiaModulo-6" value="alto-carico">
+                                    <label class="form-check-label" for="TipologiaModulo-6">Modulo ad alto carico
+                                        assistenziale</label>
+                                </div>
+                                <div class="form-check form-check-inline col-sm-3">
+                                    <input class="form-check-input" type="radio" name="TipologiaModulo"
+                                        id="TipologiaModulo-7" value="demenze">
+                                    <label class="form-check-label" for="TipologiaModulo-7">Modulo per demenze</label>
+                                </div>
+                            </div>
+                            <hr>
+                            <h6>Tipologia in rapporto alla durata</h6>
+                            <div class="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="TipologiaRapportoId"
+                                        id="TipologiaRapportoId-1" value="1" checked>
+                                    <label class="form-check-label" for="TipologiaRapportoId-1">
+                                        <strong>Episodica</strong> - legata al tempo di stabilizzazione o recupero in
+                                        seguito a condizioni morbose intercorrenti
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="TipologiaRapportoId"
+                                        id="TipologiaRapportoId-2" value="2" checked>
+                                    <label class="form-check-label" for="TipologiaRapportoId-2">
+                                        <strong>Breve</strong> - legata a condizioni socio-ambientali non adeguate o ad
+                                        impedimenti temporanei del nucleo parentale
+                                        o per decompressione familiare (massimo 30 giorni)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="TipologiaRapportoId"
+                                        id="TipologiaRapportoId-3" value="3" checked>
+                                    <label class="form-check-label" for="TipologiaRapportoId-3">
+                                        <strong>Lunga</strong> - legata a situazioni sanitarie e socio-ambientali non
+                                        altrimenti governabili
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="btn-toolbar justify-content-between">
+                                <button class="btn btn-primary prev">Precedente</button>
+                                <button class="btn btn-primary next">Successivo</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="segnalazioni" class="content" role="tabpanel" aria-labelledby="segnalazioni-trigger">
+                        <div class="container-fluid p-0 mt-5">
+
+
+                            <h6><b>Eventuali segnalazioni relative al piano esecutivo</b></h6>
+                            <div class="row">
+                                <div class="form-group col-12">
+                                    <label class='hidden' for="SegnalazioniPianoEsecutivo">Eventuali segnalazioni
+                                        relative al piano esecutivo</label>
+                                    <textarea class="form-control" id="SegnalazioniPianoEsecutivo" rows="5"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="btn-toolbar justify-content-between">
+                                <button class="btn btn-primary prev">Precedente</button>
+                                <button class="btn btn-primary" id="submit">Salva modulo</button>
                             </div>
                         </div>
 
-                    </fieldset>
 
-                    <div class="btn-toolbar justify-content-between">
-                        <button class="btn btn-primary prev">Precedente</button>
-                        <button class="btn btn-primary next">Successivo</button>
+
                     </div>
-                </div>
-
-
-                <div id="richiesta" class="content" role="tabpanel" aria-labelledby="richiesta-trigger">
-                    <h1>C</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo magnam iste ipsam dolorem
-                        sunt dignissimos nihil laudantium voluptates exercitationem quasi voluptate dolor perspiciatis,
-                        cumque reiciendis perferendis eveniet sequi voluptatum?
-                        Architecto ratione accusamus officiis, aliquid qui eum omnis beatae et atque quaerat dolores
-                        consequatur, aliquam, debitis unde magni odio? Velit eligendi exercitationem, magni maiores
-                        excepturi impedit sit quaerat officiis non.</p>
-                    <div class="btn-toolbar justify-content-between">
-                        <button class="btn btn-primary prev">Precedente</button>
-                        <button class="btn btn-primary next">Successivo</button>
-                    </div>
-                </div>
+                </form>
 
 
 
-                <div id="proposta" class="content" role="tabpanel" aria-labelledby="proposta-trigger">
-                    <h1>D</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo magnam iste ipsam dolorem
-                        sunt dignissimos nihil laudantium voluptates exercitationem quasi voluptate dolor perspiciatis,
-                        cumque reiciendis perferendis eveniet sequi voluptatum?
-                        Architecto ratione accusamus officiis, aliquid qui eum omnis beatae et atque quaerat dolores
-                        consequatur, aliquam, debitis unde magni odio? Velit eligendi exercitationem, magni maiores
-                        excepturi impedit sit quaerat officiis non.</p>
-                    <div class="btn-toolbar justify-content-between">
-                        <button class="btn btn-primary prev">Precedente</button>
-                        <button class="btn btn-primary next">Successivo</button>
-                    </div>
-                </div>
-
-
-                <div id="allegati" class="content" role="tabpanel" aria-labelledby="allegati-trigger">
-                    <h1>E</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo magnam iste ipsam dolorem
-                        sunt dignissimos nihil laudantium voluptates exercitationem quasi voluptate dolor perspiciatis,
-                        cumque reiciendis perferendis eveniet sequi voluptatum?
-                        Architecto ratione accusamus officiis, aliquid qui eum omnis beatae et atque quaerat dolores
-                        consequatur, aliquam, debitis unde magni odio? Velit eligendi exercitationem, magni maiores
-                        excepturi impedit sit quaerat officiis non.</p>
-                    <div class="btn-toolbar justify-content-between">
-                        <button class="btn btn-primary prev">Precedente</button>
-                        <button class="btn btn-primary next">Invia proposta</button>
-                    </div>
-
-
-                </div>
             </div>
+
+
         </div>
-
-
-    </div>
 
     </div>
 
@@ -271,6 +340,7 @@
     <script src="node_modules\jquery\dist\jquery.min.js"></script>
     <script src=".\node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
     <script src=".\node_modules\bs-stepper\dist\js\bs-stepper.min.js"></script>
+    <script src=".\plugin\multi-select-tag-main\dist\js\multi-select-tag.js"></script>
     <script src=".\app.js"></script>
 </body>
 
